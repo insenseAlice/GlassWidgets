@@ -68,7 +68,6 @@
             android:layout_marginTop="8dp"
             android:text="想要改颜色、加天气、加日程之类的，之后随时可以再加。"
             android:textSize="13sp"
-            android:layout_marginTop="28dp"
             android:textColor="#7FB3D5" />
     </LinearLayout>
 </ScrollView>
