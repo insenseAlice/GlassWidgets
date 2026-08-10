@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">磨砂小组件</string>
+    <string name="time_widget_label">时间日期电量·玻璃</string>
+    <string name="calendar_widget_label">月历·玻璃</string>
+    <string name="configure_title">调节透明度</string>
+    <string name="save">保存</string>
+    <string name="transparency_hint">向右滑动越不透明（磨砂感越强），向左滑动越透明（更接近直接透出壁纸）</string>
+</resources>

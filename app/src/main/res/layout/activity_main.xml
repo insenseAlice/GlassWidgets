@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B2838">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="磨砂小组件"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="本 App 不申请任何权限，所有内容均在本机计算。"
+            android:textSize="13sp"
+            android:textColor="#7FB3D5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="如何添加小组件："
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="1. 长按桌面空白处\n2. 点击「小部件 / 挂件」\n3. 找到「磨砂小组件」\n4. 拖动想要的小组件到桌面\n5. 松手后会弹出透明度调节界面，滑动调整后点击保存"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#CCD6DF" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="已包含的小组件："
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="• 时间日期电量·玻璃（4x2）\n• 月历·玻璃（3x3）"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#CCD6DF" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="想要改颜色、加天气、加日程之类的，之后随时可以再加。"
+            android:textSize="13sp"
+            android:layout_marginTop="28dp"
+            android:textColor="#7FB3D5" />
+    </LinearLayout>
+</ScrollView>

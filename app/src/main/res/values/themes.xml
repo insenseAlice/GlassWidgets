@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GlassWidgets" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">#4A6FA5</item>
+        <item name="colorPrimaryDark">#2E4A78</item>
+        <item name="colorAccent">#7FB3D5</item>
+    </style>
