@@ -21,7 +21,12 @@ object GreenTheme {
         GreenPalette("森林", R.drawable.card_bg_forest, Color.parseColor("#DCEBDD")),
         GreenPalette("鼠尾草", R.drawable.card_bg_sage, Color.parseColor("#EEF3E6")),
         GreenPalette("抹茶", R.drawable.card_bg_matcha, Color.parseColor("#F3F0DC")),
-        GreenPalette("墨绿", R.drawable.card_bg_deepgreen, Color.parseColor("#E3EFE8"))
+        GreenPalette("墨绿", R.drawable.card_bg_deepgreen, Color.parseColor("#E3EFE8")),
+        GreenPalette("竹影", R.drawable.bg_green_bamboo_leaves, Color.parseColor("#F5F5F0"), Color.parseColor("#FFFFFF"), Color.parseColor("#E8E8E0")),
+        GreenPalette("叶隙天光", R.drawable.bg_green_bamboo_light, Color.parseColor("#F0F8F0"), Color.parseColor("#FFFFFF"), Color.parseColor("#E0F0E0")),
+        GreenPalette("栀子青柠", R.drawable.bg_green_gardenia_lime, Color.parseColor("#F5FFE8"), Color.parseColor("#4A4A3A"), Color.parseColor("#6A6A5A")),
+        GreenPalette("清雅百合", R.drawable.bg_green_lily_blue, Color.parseColor("#EDF5FF"), Color.parseColor("#3A4A5A"), Color.parseColor("#5A6A7A")),
+        GreenPalette("青柠切面", R.drawable.bg_green_lime_slice, Color.parseColor("#F0FFF0"), Color.parseColor("#3A4A2A"), Color.parseColor("#5A6A4A"))
     )
 
     fun get(index: Int): GreenPalette {

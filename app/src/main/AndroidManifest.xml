@@ -30,7 +30,7 @@
         <!-- 通用配色配置界面：日历 / 电量 / 闹钟 / 护眼倒计时 共用 -->
         <activity
             android:name=".ThemeConfigureActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.GlassWidgets">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
@@ -40,7 +40,7 @@
         <!-- ① 时间日期电量玻璃小组件 -->
         <receiver
             android:name=".TimeGlassWidgetProvider"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -50,7 +50,7 @@
         </receiver>
         <activity
             android:name=".TimeConfigureActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.GlassWidgets">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
@@ -60,7 +60,7 @@
         <!-- ② 月历玻璃小组件 -->
         <receiver
             android:name=".CalendarGlassWidgetProvider"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -72,7 +72,7 @@
         <!-- ③ 电量环形玻璃小组件 -->
         <receiver
             android:name=".BatteryGlassWidgetProvider"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -84,7 +84,7 @@
         <!-- ④ 闹钟快捷玻璃小组件 -->
         <receiver
             android:name=".AlarmGlassWidgetProvider"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -96,7 +96,7 @@
         <!-- ⑤ 音乐快捷玻璃小组件 -->
         <receiver
             android:name=".MusicGlassWidgetProvider"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -106,7 +106,7 @@
         </receiver>
         <activity
             android:name=".MusicConfigureActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.GlassWidgets">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
@@ -116,7 +116,7 @@
         <!-- ⑥ 一句话手记玻璃小组件 -->
         <receiver
             android:name=".NoteGlassWidgetProvider"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -126,7 +126,7 @@
         </receiver>
         <activity
             android:name=".NoteConfigureActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.GlassWidgets">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
@@ -134,13 +134,13 @@
         </activity>
         <activity
             android:name=".NoteEditActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.GlassWidgets" />
 
         <!-- ⑦ 护眼倒计时玻璃小组件 -->
         <receiver
             android:name=".EyeCareGlassWidgetProvider"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.alyssa.glasswidgets.ACTION_EYECARE_TOGGLE" />
@@ -153,7 +153,7 @@
         <!-- ⑧ 倒数日玻璃小组件 -->
         <receiver
             android:name=".CountdownGlassWidgetProvider"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -163,7 +163,7 @@
         </receiver>
         <activity
             android:name=".CountdownConfigureActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.GlassWidgets">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
