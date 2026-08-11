@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1B2838">
+    android:background="@color/app_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,18 +13,18 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="磨砂小组件"
+            android:text="绿植护眼小组件"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/text_on_glass" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="本 App 不申请任何权限，所有内容均在本机计算。"
+            android:text="本 App 不申请任何运行时权限，所有内容均在本机计算。"
             android:textSize="13sp"
-            android:textColor="#7FB3D5" />
+            android:textColor="@color/app_text_secondary" />
 
         <TextView
             android:layout_width="match_parent"
@@ -33,41 +33,41 @@
             android:text="如何添加小组件："
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/text_on_glass" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="1. 长按桌面空白处\n2. 点击「小部件 / 挂件」\n3. 找到「磨砂小组件」\n4. 拖动想要的小组件到桌面\n5. 松手后会弹出透明度调节界面，滑动调整后点击保存"
+            android:text="1. 长按桌面空白处\n2. 点击「小部件 / 挂件」\n3. 找到「绿植护眼小组件」\n4. 拖动想要的小组件到桌面\n5. 松手后会弹出配色和透明度设置界面，选好后点击保存"
             android:textSize="14sp"
             android:lineSpacingExtra="4dp"
-            android:textColor="#CCD6DF" />
+            android:textColor="@color/app_text_secondary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="已包含的小组件："
+            android:text="已包含的 8 个小组件："
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/text_on_glass" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="• 时间日期电量·玻璃（4x2）\n• 月历·玻璃（3x3）"
+            android:text="① 时间日期电量（可选字体）\n② 月历\n③ 电量胶囊进度条\n④ 闹钟快捷 · 点击直达系统闹钟\n⑤ 音乐快捷 · 点击跳转你选的音乐 App\n⑥ 一句话手记 · 点击可写今日心情\n⑦ 护眼倒计时 · 20 分钟提醒歇眼睛\n⑧ 倒数日 · 自定义目标日期"
             android:textSize="14sp"
             android:lineSpacingExtra="4dp"
-            android:textColor="#CCD6DF" />
+            android:textColor="@color/app_text_secondary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="想要改颜色、加天气、加日程之类的，之后随时可以再加。"
+            android:layout_marginTop="28dp"
+            android:text="每个小组件都可以单独选配色（5套绿植色系）和透明度，想再加新组件随时可以说。"
             android:textSize="13sp"
-            android:textColor="#7FB3D5" />
+            android:textColor="@color/app_text_secondary" />
     </LinearLayout>
 </ScrollView>

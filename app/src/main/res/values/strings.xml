@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">磨砂小组件</string>
-    <string name="time_widget_label">时间日期电量·玻璃</string>
-    <string name="calendar_widget_label">月历·玻璃</string>
-    <string name="configure_title">调节透明度</string>
+    <string name="app_name">绿植护眼小组件</string>
+    <string name="time_widget_label">时间日期电量 · 绿植</string>
+    <string name="calendar_widget_label">月历 · 绿植</string>
+    <string name="battery_widget_label">电量胶囊 · 绿植</string>
+    <string name="alarm_widget_label">闹钟快捷 · 绿植</string>
+    <string name="music_widget_label">音乐快捷 · 绿植</string>
+    <string name="note_widget_label">一句话手记 · 绿植</string>
+    <string name="eyecare_widget_label">护眼倒计时 · 绿植</string>
+    <string name="countdown_widget_label">倒数日 · 绿植</string>
+    <string name="configure_title">调节样式</string>
     <string name="save">保存</string>
-    <string name="transparency_hint">向右滑动越不透明（磨砂感越强），向左滑动越透明（更接近直接透出壁纸）</string>
+    <string name="transparency_hint">透明度：向右更不透明（磨砂感更强），向左更透明（更能透出壁纸细节）</string>
 </resources>

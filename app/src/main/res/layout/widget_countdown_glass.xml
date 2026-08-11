@@ -9,12 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/card_bg_forest" />
+        android:src="@drawable/card_bg_deepgreen" />
 
     <ImageView
         android:id="@+id/iv_leaf"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
         android:layout_gravity="end|top"
         android:layout_margin="6dp"
         android:rotation="200"
@@ -25,29 +25,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:gravity="center"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/tv_month_title"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_countdown_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3月 2026"
-            android:textSize="16sp"
+            android:text="距离目标"
+            android:maxLines="1"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/text_on_glass_secondary" />
+
+        <TextView
+            android:id="@+id/tv_countdown_days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="99 天"
+            android:textSize="32sp"
             android:textStyle="bold"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@color/text_on_glass"
-            android:gravity="center" />
-
-        <TextView
-            android:id="@+id/tv_grid"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="8dp"
-            android:fontFamily="monospace"
-            android:textSize="12sp"
-            android:lineSpacingExtra="5dp"
-            android:textColor="@color/text_on_glass"
-            android:gravity="center" />
+            android:textColor="@color/text_on_glass" />
     </LinearLayout>
 </FrameLayout>

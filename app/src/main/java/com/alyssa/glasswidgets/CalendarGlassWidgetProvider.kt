@@ -19,7 +19,7 @@ class CalendarGlassWidgetProvider : AppWidgetProvider() {
 
     override fun onDeleted(context: Context, appWidgetIds: IntArray) {
         for (id in appWidgetIds) {
-            WidgetPrefs.deleteAlpha(context, id)
+            WidgetPrefs.deleteAll(context, id)
         }
     }
 
@@ -27,8 +27,13 @@ class CalendarGlassWidgetProvider : AppWidgetProvider() {
         fun updateWidget(context: Context, appWidgetManager: AppWidgetManager, widgetId: Int) {
             val views = RemoteViews(context.packageName, R.layout.widget_calendar_glass)
 
+            val palette = GreenTheme.get(WidgetPrefs.loadPalette(context, widgetId))
             val alpha = WidgetPrefs.loadAlpha(context, widgetId)
+            views.setImageViewResource(R.id.iv_glass_bg, palette.cardBackgroundRes)
             views.setInt(R.id.iv_glass_bg, "setImageAlpha", alpha)
+            views.setInt(R.id.iv_leaf, "setColorFilter", palette.textColor)
+            views.setTextColor(R.id.tv_month_title, palette.textColor)
+            views.setTextColor(R.id.tv_grid, palette.textColor)
 
             val today = LocalDate.now()
             val yearMonth = YearMonth.from(today)
@@ -41,7 +46,6 @@ class CalendarGlassWidgetProvider : AppWidgetProvider() {
         private fun buildMonthGrid(today: LocalDate): String {
             val yearMonth = YearMonth.from(today)
             val firstDay = yearMonth.atDay(1)
-            // 周一到周日的表头
             val weekHeaders = (1..7).joinToString(" ") { dow ->
                 java.time.DayOfWeek.of(dow).getDisplayName(TextStyle.NARROW, Locale.CHINA)
             }
@@ -49,7 +53,6 @@ class CalendarGlassWidgetProvider : AppWidgetProvider() {
             val sb = StringBuilder()
             sb.append(weekHeaders).append("\n")
 
-            // ISO: 周一=1 ... 周日=7，转换成本行前面需要空几格
             val leadingBlanks = firstDay.dayOfWeek.value - 1
             var column = 0
             repeat(leadingBlanks) {
@@ -58,7 +61,7 @@ class CalendarGlassWidgetProvider : AppWidgetProvider() {
             }
 
             for (day in 1..yearMonth.lengthOfMonth()) {
-                val marker = if (day == today.dayOfMonth) "[${day.toString().padStart(2, ' ')}]" else " ${day.toString().padStart(2, ' ')} "
+                val marker = if (day == today.dayOfMonth) "·${day.toString().padStart(2, ' ')}" else " ${day.toString().padStart(2, ' ')} "
                 sb.append(marker)
                 column++
                 if (column == 7) {

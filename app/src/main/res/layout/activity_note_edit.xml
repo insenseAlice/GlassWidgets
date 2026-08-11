@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/app_bg"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="写句今天想记的话"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_on_glass" />
+
+    <EditText
+        android:id="@+id/edit_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minLines="3"
+        android:maxLength="60"
+        android:gravity="top"
+        android:textColor="@color/text_on_glass"
+        android:textColorHint="@color/app_text_secondary"
+        android:hint="今天的心情、待办、随便一句话都可以" />
+
+    <Button
+        android:id="@+id/btn_save_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="保存" />
+</LinearLayout>

@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">#4A6FA5</color>
-    <color name="glass_white">#FFFFFF</color>
-    <color name="text_on_glass">#FFFFFF</color>
-    <color name="text_on_glass_secondary">#E0FFFFFF</color>
+    <color name="ic_launcher_background">#2F5233</color>
+
+    <!-- 护眼绿植五套配色：薄荷 / 森林 / 鼠尾草 / 抹茶 / 墨绿 -->
+    <color name="palette_mint_accent">#3FA796</color>
+    <color name="palette_forest_accent">#2F5233</color>
+    <color name="palette_sage_accent">#6B8E5A</color>
+    <color name="palette_matcha_accent">#8A9A5B</color>
+    <color name="palette_deepgreen_accent">#1B3B2F</color>
+
+    <color name="text_on_glass">#F4F7F2</color>
+    <color name="text_on_glass_secondary">#D6E4D6</color>
+    <color name="app_bg">#132A20</color>
+    <color name="app_card_bg">#1D3A2C</color>
+    <color name="app_text_secondary">#9FC2A6</color>
 </resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_glass_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/card_bg_matcha" />
+
+    <ImageView
+        android:id="@+id/iv_leaf"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="8dp"
+        android:rotation="30"
+        android:alpha="0.3"
+        android:src="@drawable/ic_leaf" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点一下，写句今天想记的话"
+            android:textSize="15sp"
+            android:maxLines="4"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/text_on_glass" />
+    </LinearLayout>
+</FrameLayout>

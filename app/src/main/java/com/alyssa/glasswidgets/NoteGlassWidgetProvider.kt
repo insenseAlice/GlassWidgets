@@ -5,13 +5,9 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
-import android.graphics.PorterDuff
-import android.os.BatteryManager
-import android.provider.AlarmClock
 import android.widget.RemoteViews
 
-class TimeGlassWidgetProvider : AppWidgetProvider() {
+class NoteGlassWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         for (widgetId in appWidgetIds) {
@@ -26,33 +22,27 @@ class TimeGlassWidgetProvider : AppWidgetProvider() {
     }
 
     companion object {
-        const val EXTRA_FONT = "font"
+        const val EXTRA_NOTE = "note_text"
 
         fun updateWidget(context: Context, appWidgetManager: AppWidgetManager, widgetId: Int) {
-            val useLightFont = WidgetPrefs.loadExtra(context, widgetId, EXTRA_FONT, "bold") == "light"
-            val layoutRes = if (useLightFont) R.layout.widget_time_glass_light else R.layout.widget_time_glass_bold
-            val views = RemoteViews(context.packageName, layoutRes)
+            val views = RemoteViews(context.packageName, R.layout.widget_note_glass)
 
             val palette = GreenTheme.get(WidgetPrefs.loadPalette(context, widgetId))
             val alpha = WidgetPrefs.loadAlpha(context, widgetId)
-
             views.setImageViewResource(R.id.iv_glass_bg, palette.cardBackgroundRes)
             views.setInt(R.id.iv_glass_bg, "setImageAlpha", alpha)
             views.setInt(R.id.iv_leaf, "setColorFilter", palette.textColor)
-            views.setTextColor(R.id.clock_time, palette.textColor)
-            views.setTextColor(R.id.clock_date, palette.secondaryTextColor)
-            views.setTextColor(R.id.tv_battery, palette.secondaryTextColor)
+            views.setTextColor(R.id.tv_note, palette.textColor)
 
-            val batteryIntent = context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
-            val level = batteryIntent?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
-            val scale = batteryIntent?.getIntExtra(BatteryManager.EXTRA_SCALE, -1) ?: -1
-            val percent = if (level >= 0 && scale > 0) (level * 100 / scale) else -1
-            views.setTextViewText(R.id.tv_battery, if (percent >= 0) "$percent%" else "--%")
+            val note = WidgetPrefs.loadExtra(context, widgetId, EXTRA_NOTE, "")
+            views.setTextViewText(R.id.tv_note, note.ifEmpty { "点一下，写句今天想记的话" })
 
-            // 点击跳转系统时钟 App
-            val clockIntent = Intent(AlarmClock.ACTION_SHOW_ALARMS)
+            val editIntent = Intent(context, NoteEditActivity::class.java).apply {
+                putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId)
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            }
             val pendingIntent = PendingIntent.getActivity(
-                context, widgetId, clockIntent,
+                context, widgetId, editIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )
             views.setOnClickPendingIntent(R.id.widget_root, pendingIntent)

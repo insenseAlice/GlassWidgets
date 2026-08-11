@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- 本应用不申请任何运行时权限 -->
+    <!-- 下面这条 <queries> 只是让系统告诉本 App「有哪些可以打开的 App」，
+         用于音乐快捷组件里选择要跳转的目标 App；不是运行时权限，不会弹窗，用户无感 -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
@@ -19,6 +27,16 @@
             </intent-filter>
         </activity>
 
+        <!-- 通用配色配置界面：日历 / 电量 / 闹钟 / 护眼倒计时 共用 -->
+        <activity
+            android:name=".ThemeConfigureActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GlassWidgets">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
         <!-- ① 时间日期电量玻璃小组件 -->
         <receiver
             android:name=".TimeGlassWidgetProvider"
@@ -30,9 +48,8 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/time_glass_widget_info" />
         </receiver>
-
         <activity
-            android:name=".TimeGlassConfigureActivity"
+            android:name=".TimeConfigureActivity"
             android:exported="false"
             android:theme="@style/Theme.GlassWidgets">
             <intent-filter>
@@ -52,8 +69,100 @@
                 android:resource="@xml/calendar_glass_widget_info" />
         </receiver>
 
+        <!-- ③ 电量环形玻璃小组件 -->
+        <receiver
+            android:name=".BatteryGlassWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/battery_glass_widget_info" />
+        </receiver>
+
+        <!-- ④ 闹钟快捷玻璃小组件 -->
+        <receiver
+            android:name=".AlarmGlassWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/alarm_glass_widget_info" />
+        </receiver>
+
+        <!-- ⑤ 音乐快捷玻璃小组件 -->
+        <receiver
+            android:name=".MusicGlassWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/music_glass_widget_info" />
+        </receiver>
         <activity
-            android:name=".CalendarGlassConfigureActivity"
+            android:name=".MusicConfigureActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GlassWidgets">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ⑥ 一句话手记玻璃小组件 -->
+        <receiver
+            android:name=".NoteGlassWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/note_glass_widget_info" />
+        </receiver>
+        <activity
+            android:name=".NoteConfigureActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GlassWidgets">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NoteEditActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GlassWidgets" />
+
+        <!-- ⑦ 护眼倒计时玻璃小组件 -->
+        <receiver
+            android:name=".EyeCareGlassWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.alyssa.glasswidgets.ACTION_EYECARE_TOGGLE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/eyecare_glass_widget_info" />
+        </receiver>
+
+        <!-- ⑧ 倒数日玻璃小组件 -->
+        <receiver
+            android:name=".CountdownGlassWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/countdown_glass_widget_info" />
+        </receiver>
+        <activity
+            android:name=".CountdownConfigureActivity"
             android:exported="false"
             android:theme="@style/Theme.GlassWidgets">
             <intent-filter>
